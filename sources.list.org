@@ -1,0 +1,7 @@
+deb [arch=amd64] http://192.168.202.250/apt/ubuntu/ trusty main multiverse restricted universe
+deb [arch=amd64] http://192.168.202.250/apt/ubuntu/ trusty-security main multiverse restricted universe
+deb [arch=amd64] http://192.168.202.250/apt/ubuntu/ trusty-updates main multiverse restricted universe
+deb [arch=amd64] http://192.168.202.250/apt/ceph/ hammer main
+deb [arch=amd64] http://192.168.202.250/apt/openstack/ kilo main
+deb [arch=amd64] http://192.168.202.250/apt/mariadb/ trusty main
+deb [arch=amd64] http://192.168.202.250/apt/zabbix/2.4/ubuntu/ trusty main
