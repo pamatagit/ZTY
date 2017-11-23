@@ -59,6 +59,11 @@ $qemu23_step6_str = "Step 6/6 : reboot....";
 # File Handle
 #open FH1, ">>$log_file" or die "$datetimes\tcan't open file: $!\n";
 
+###############################################################
+# If only want to upgrade qemu to 2.3, comment out lines to 136
+###############################################################
+
+###### Upgrade nova code begining #######
 $backup_nova_cmd = "cd $nova_dir; tar zcvf $backup_dir/nova-backup-$datetime.tar.gz $nova_dir $nova_egg_dir";
 $unpack_patch_cmd = "cd $base_dir && tar zxvf $patch_pkg";
 $remove_egg_cmd = "cd $python_dist_dir; rm -rf $nova_egg_dir";
@@ -129,7 +134,9 @@ die ("Error: patch failed!  $?\n") until ($nova_result =~ /config_spec.name = in
 
 print "\n\n ===========================================\n\n";
 print "The patch works! ^_^  upgrade nova v1.0.3 successful!!\n\n\n\n";
+###### Upgrade nova code ending ######
 
+###### Upgrade qemu begining ######
 #-------------------------------------------------------------------------------------
 if ($role eq 'computer') {
     print "Continue to upgrade QEMU from v2.2 to v2.3.....\n";
@@ -167,4 +174,6 @@ if ($role eq 'computer') {
 
 $qemu_version = `dpkg -l|grep qemu`;
 print "$qemu_version\n";
+###### Upgrade qemu ending ######
+
 exit 0;
